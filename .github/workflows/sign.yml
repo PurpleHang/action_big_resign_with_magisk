@@ -68,12 +68,12 @@ jobs:
         sudo ln -sf /usr/bin/python2.7 /usr/bin/python
         cd work
         ./sign_avb.sh ${{ github.event.inputs.PART_NAME }} ../image.img ../image.img ${{ github.event.inputs.PART_SIZE }}
-
+        tar czvf image.tar.gz image.img
     - name: Upload to Release
       uses: softprops/action-gh-release@v1
       with:
         files: | 
-          image.img
+          image.tar.gz
         name: ${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: |
