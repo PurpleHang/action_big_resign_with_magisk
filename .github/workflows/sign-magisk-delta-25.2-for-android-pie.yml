@@ -61,6 +61,7 @@ jobs:
         mkdir work
         mv main/boot_patch.sh boot/
         mv main/sign_avb.sh work/
+        mv main/Magisk-Delta-25.2.apk work/
         chmod +x boot/*
         chmod +x work/*
         busybox unzip -oq Magisk-Delta-25.2.apk -d boot/zzz
