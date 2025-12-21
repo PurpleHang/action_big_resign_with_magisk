@@ -64,7 +64,7 @@ jobs:
         mv main/Magisk-Delta-25.2.apk work/
         chmod +x boot/*
         chmod +x work/*
-        busybox unzip -oq Magisk-Delta-25.2.apk -d boot/zzz
+        busybox unzip -oq main/Magisk-Delta-25.2.apk -d boot/zzz
         curl -o boot/boot.img -L "${{ github.event.inputs.IMG_URL }}"
         tar xzvf avbtool.tgz -C work/
         cp main/config/*.pem work/
